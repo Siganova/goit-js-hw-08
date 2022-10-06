@@ -11,4 +11,6 @@ player.on('timeupdate', throttle((data) =>{
     localStorage.setItem(TIME_LINE_KEY, data.seconds);
 },1000));
 
-player.setCurrentTime(localStorage.getItem(TIME_LINE_KEY));
+if (localStorage.getItem(TIME_LINE_KEY)) {
+    player.setCurrentTime(localStorage.getItem(TIME_LINE_KEY));
+}
